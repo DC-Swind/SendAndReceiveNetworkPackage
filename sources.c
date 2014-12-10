@@ -84,7 +84,7 @@ int start_receive(){
         printf("-------------------Start Of A Package---------------------\n");
         printf("MAC address: %.2x:%02x:%02x:%02x:%02x:%02x==> %.2x:%02x:%02x:%02x:%02x:%02x\n",p[6],p[7],p[8],p[9],p[10],p[11],p[0],p[1],p[2],p[3],p[4],p[5]);
         //加快运行速度，使用GOTO语句
-        switch(p[12]<<8+p[13]){
+        switch((p[12]<<8)+p[13]){
             case 0x0600: printf("XEROX NS IDP \n"); goto End; break;
             case 0x0660:case 0x0661 printf("DLOG \n"); goto End; break;
             case 0x0800: printf("IP Header: \n"); goto Net_IP; break;
